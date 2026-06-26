@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A E T H E R E U M | Digital Art Sanctuary</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A premium digital art sanctuary featuring classical masterworks and futuristic digital explorations in an immersive, avant-garde spatial exhibition.">
+  <!-- Fix for local image loading from Wikimedia Commons -->
+  <meta name="referrer" content="no-referrer">
+  
+  <!-- Fonts: Cormorant Garamond, Syne, and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <div class="custom-cursor-inner"></div>
+    <div class="custom-cursor-text" id="customCursorText"></div>
+  </div>
+
+  <!-- Audio & Navigation Controls -->
+  <header class="gallery-controls">
+    <div class="brand">
+      <a href="#foyer" class="brand-link">A E T H E R E U M</a>
+    </div>
+    
+    <div class="control-actions">
+      <!-- Ambient Audio Toggle -->
+      <button class="control-btn" id="audioToggle" aria-label="Toggle Ambient Audio">
+        <span class="btn-label">SOUND OFF</span>
+        <span class="sound-wave">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      
+      <!-- Nav Menu Trigger -->
+      <button class="control-btn" id="menuToggle" aria-label="Toggle Menu">
+        <span class="btn-label">EXHIBITIONS</span>
+        <span class="burger-icon">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Side Navigation Overlay -->
+  <nav class="nav-overlay" id="navOverlay">
+    <div class="nav-overlay-bg"></div>
+    <div class="nav-content">
+      <div class="nav-header">
+        <span class="nav-subtitle">EXHIBITION ROOMS</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#foyer" class="nav-link" data-index="01">Foyer</a></li>
+        <li><a href="#masterpiece-gallery" class="nav-link" data-index="02">The Masterpiece Gallery</a></li>
+        <li><a href="#texture-reel" class="nav-link" data-index="03">The Futuristic Texture Reel</a></li>
+        <li><a href="#architectural-dimensions" class="nav-link" data-index="04">Architectural Dimensions</a></li>
+      </ul>
+      <div class="nav-footer">
+        <p class="nav-credits">Curated in 2026. Procedural Synthesizer Active.</p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Scroll Container -->
+  <main id="scrollContainer">
+
+    <!-- Section 1: The Foyer (Intro) -->
+    <section class="section foyer-section" id="foyer" data-room="Foyer">
+      <div class="foyer-bg-mesh"></div>
+      <div class="foyer-content" id="foyerContent">
+        <div class="foyer-tagline font-sans">ROOM I</div>
+        <h1 class="foyer-title font-serif">
+          <span>The</span><br>
+          <span class="indent-1">Floating</span><br>
+          <span class="indent-2">Foyer</span>
+        </h1>
+        <p class="foyer-description font-sans">
+          A minimalist threshold between the classical and the speculative. Step inside the digital sanctuary. Adjust your audio levels. Allow the space to breathe.
+        </p>
+        <div class="foyer-enter-trigger">
+          <a href="#masterpiece-gallery" class="enter-btn font-sans" id="enterExhibition">
+            ENTER EXHIBITION
+            <span class="arrow">↓</span>
+          </a>
+        </div>
+      </div>
+      <div class="foyer-footer">
+        <div class="foyer-scroll-hint font-sans">
+          <span>SCROLL DOWN</span>
+          <div class="line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The Masterpiece Gallery -->
+    <section class="section gallery-section" id="masterpiece-gallery" data-room="Masterpiece Gallery">
+      
+      <!-- Section Header -->
+      <header class="section-header">
+        <div class="room-indicator font-sans">ROOM II</div>
+        <h2 class="section-title font-serif">The Masterpiece<br>Gallery</h2>
+        <p class="section-subtitle font-sans">
+          An asymmetric curation of thirty classical masterworks. Suspended in pure white void, varying in dimensions and depths, reflecting the architectural weight of physical exhibitions.
+        </p>
+        
+        <!-- Filter Bar -->
+        <div class="filter-container">
+          <button class="filter-btn active font-sans" data-filter="all">All Works</button>
+          <button class="filter-btn font-sans" data-filter="renaissance">Renaissance</button>
+          <button class="filter-btn font-sans" data-filter="baroque">Baroque</button>
+          <button class="filter-btn font-sans" data-filter="romanticism">Romanticism</button>
+          <button class="filter-btn font-sans" data-filter="realism-impressionism">Realism & Impressionism</button>
+          <button class="filter-btn font-sans" data-filter="modern-symbolism">Modern & Symbolism</button>
+        </div>
+      </header>
+
+      <!-- Asymmetric Masterpiece Grid -->
+      <div class="masterpiece-grid-wrapper">
+        <div class="masterpiece-grid" id="masterpieceGrid">
+          <div class="grid-loader">
+            <span class="loader-circle"></span>
+            <p class="font-sans">Curating Classical Wing...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: The Futuristic Texture Reel -->
+    <section class="section texture-section" id="texture-reel" data-room="Texture Reel">
+      <header class="section-header">
+        <div class="room-indicator font-sans">ROOM III</div>
+        <h2 class="section-title font-serif">The Futuristic<br>Texture Reel</h2>
+        <p class="section-subtitle font-sans">
+          Interactive horizontal explorations of high-tech digital simulated materials. Drag horizontally or click on a texture card inside the viewfinder window to run material diagnostics.
+        </p>
+      </header>
+      
+      <div class="viewfinder-wrapper">
+        <!-- Viewfinder Decorative Overlay Frame -->
+        <div class="viewfinder-overlay">
+          <div class="viewfinder-corner top-left"></div>
+          <div class="viewfinder-corner top-right"></div>
+          <div class="viewfinder-corner bottom-left"></div>
+          <div class="viewfinder-corner bottom-right"></div>
+          <div class="viewfinder-grid-lines">
+            <div class="grid-line vertical-1"></div>
+            <div class="grid-line vertical-2"></div>
+            <div class="grid-line horizontal-1"></div>
+            <div class="grid-line horizontal-2"></div>
+          </div>
+          <div class="viewfinder-telemetry font-sans">
+            <div class="tel-item item-rec">
+              <span class="rec-dot"></span><span>REC</span>
+            </div>
+            <div class="tel-item">RAW</div>
+            <div class="tel-item">ISO 400</div>
+            <div class="tel-item">F2.8</div>
+            <div class="tel-item tel-pos" id="telPos">X:0.00 / Y:0.00</div>
+          </div>
+        </div>
+
+        <!-- Horizontal Scroll Slider -->
+        <div class="texture-slider-outer" id="textureSliderOuter">
+          <div class="texture-slider-track" id="textureSliderTrack">
+            <!-- Dynamically populated via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Readout Panel (Dynamic details of selected texture) -->
+      <div class="readout-panel-wrapper">
+        <div class="readout-panel" id="readoutPanel">
+          <div class="readout-header font-sans">
+            <span class="status">DIAGNOSTICS: ONLINE</span>
+            <span class="time-stamp" id="readoutTimestamp">SYS.T: 04:28:37</span>
+          </div>
+          <div class="readout-body">
+            <div class="readout-text-group">
+              <h3 class="readout-title font-serif" id="readoutTitle">Iridescent Liquid Chrome</h3>
+              <p class="readout-description font-sans" id="readoutDescription">
+                A simulated fluid metallic material that reflects light in full-spectrum iridescence. Click on any texture strip above to read its molecular details.
+              </p>
+            </div>
+            <div class="readout-specs font-sans" id="readoutSpecs">
+              <!-- Specs items populated dynamically -->
+              <div class="spec-row"><span class="label">REFRACTION:</span><span class="value">--</span></div>
+              <div class="spec-row"><span class="label">COHERENCE:</span><span class="value">--</span></div>
+              <div class="spec-row"><span class="label">THERMAL K:</span><span class="value">--</span></div>
+              <div class="spec-row"><span class="label">SURFACE TNS:</span><span class="value">--</span></div>
+              <div class="spec-row"><span class="label">RESPONSE:</span><span class="value">--</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Architectural Dimensions -->
+    <section class="section architectural-section" id="architectural-dimensions" data-room="Architectural Dimensions">
+      <header class="section-header">
+        <div class="room-indicator font-sans">ROOM IV</div>
+        <h2 class="section-title font-serif">Architectural<br>Dimensions</h2>
+        <p class="section-subtitle font-sans">
+          A showcase of conceptual futuristic dwellings and biophilic spatial renders. Click on any concept to slide out the design philosophy and material specifications.
+        </p>
+      </header>
+
+      <div class="architectural-grid-wrapper">
+        <div class="architectural-grid" id="architecturalGrid">
+          <!-- Dynamically populated via JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Minimalist Footer -->
+      <footer class="gallery-footer font-sans">
+        <div class="footer-top">
+          <div class="footer-brand font-serif">AETHERIUM</div>
+          <div class="footer-tagline">Digital Sanctuary of Art & Space</div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2026 Aetherium. All rights reserved.</p>
+          <p class="footer-note">Procedural Audio Engine &bull; Pure CSS Layouts</p>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Side Room Indicator Display (Fixed position left side) -->
+  <div class="room-indicator-dock font-sans">
+    <div class="indicator-bar">
+      <div class="indicator-progress" id="indicatorProgress"></div>
+    </div>
+    <span class="active-room-name" id="activeRoomName">FOYER</span>
+  </div>
+
+  <!-- Minimalist Modal Detail Card (Classical Masterpiece Modal) -->
+  <div class="modal-overlay" id="masterpieceModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">
+        <span>CLOSE</span>
+        <span class="close-cross"></span>
+      </button>
+      
+      <div class="modal-content">
+        <div class="modal-image-wrapper">
+          <img src="" alt="" class="modal-image" id="modalImage">
+          <div class="modal-image-caption font-sans" id="modalImageCaption"></div>
+        </div>
+        
+        <div class="modal-info-panel">
+          <div class="modal-meta font-sans">
+            <span class="modal-category" id="modalMovement">RENAISSANCE</span>
+            <span class="modal-year" id="modalYear">1503</span>
+          </div>
+          <h3 class="modal-title font-serif" id="modalTitle">Mona Lisa</h3>
+          <h4 class="modal-artist font-sans" id="modalArtist">Leonardo da Vinci</h4>
+          
+          <div class="modal-separator"></div>
+          
+          <div class="modal-description font-sans" id="modalDescription"></div>
+          
+          <div class="modal-technical font-sans">
+            <div class="tech-item">
+              <span class="label">Medium:</span>
+              <span class="value" id="modalMedium">Oil on poplar panel</span>
+            </div>
+            <div class="tech-item">
+              <span class="label">Dimensions:</span>
+              <span class="value" id="modalDimensions">77 cm × 53 cm</span>
+            </div>
+            <div class="tech-item">
+              <span class="label">Location:</span>
+              <span class="value" id="modalLocation">Musée du Louvre, Paris</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side-Drawer Panel (Architectural Dimensions Detail Overlay) -->
+  <div class="side-drawer" id="archDrawer">
+    <div class="side-drawer-backdrop" id="archDrawerBackdrop"></div>
+    <div class="side-drawer-container">
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Details">
+        <span class="close-cross"></span>
+      </button>
+      <div class="drawer-scroll-wrapper">
+        <div class="drawer-image-wrap">
+          <img src="" alt="" id="drawerImage">
+        </div>
+        <div class="drawer-body">
+          <div class="drawer-meta font-sans">
+            <span class="drawer-designer" id="drawerDesigner">Studio Rostova</span>
+          </div>
+          <h3 class="drawer-title font-serif" id="drawerTitle">Biophilic Glass Dome</h3>
+          
+          <div class="drawer-section">
+            <h4 class="drawer-section-title font-sans">PHILOSOPHY</h4>
+            <p class="drawer-philosophy font-serif" id="drawerPhilosophy">
+              Integrating geodetic glass shells with active indoor biospheres...
+            </p>
+          </div>
+          
+          <div class="drawer-section">
+            <h4 class="drawer-section-title font-sans">MATERIALS</h4>
+            <div class="drawer-tags" id="drawerMaterials">
+              <!-- Dynamically populated tags -->
+            </div>
+          </div>
+
+          <div class="drawer-section">
+            <h4 class="drawer-section-title font-sans">CONCEPT OVERVIEW</h4>
+            <p class="drawer-description font-sans" id="drawerDescription">
+              The Biophilic Glass Dome represents a vision of residential shelter...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data and logic scripts -->
+  <script src="textures.js"></script>
+  <script src="architecture-data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
