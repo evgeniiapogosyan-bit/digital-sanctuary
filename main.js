@@ -488,22 +488,7 @@ const masterpieces = [
    WIKIMEDIA COMMONS THUMBNAIL HELPER
    ========================================================================== */
 function getWikimediaThumbnail(originalUrl, width = 500) {
-  if (!originalUrl.includes("upload.wikimedia.org/wikipedia/commons/")) {
-    return originalUrl;
-  }
-  
-  let cleanUrl = originalUrl;
-  if (originalUrl.includes("/thumb/")) {
-    cleanUrl = originalUrl.replace("/thumb/", "/");
-    const lastSlash = cleanUrl.lastIndexOf("/");
-    cleanUrl = cleanUrl.substring(0, lastSlash);
-  }
-  
-  const parts = cleanUrl.split("wikipedia/commons/");
-  const path = parts[1];
-  const filename = path.substring(path.lastIndexOf("/") + 1);
-  
-  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${width}px-${filename}`;
+  return originalUrl;
 }
 
 /* ==========================================================================
